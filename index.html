@@ -5,25 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>vanilla-js-site</title>
-    <link rel="stylesheet" href="/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
+    <link rel="stylesheet" href="styles.css" />
     <style>
       h1 {
         background-color: blue;
+        text-align: center;
       }
 
-      .canvas-wrapper {
+      .container {
+        /* Settings to center align contents of div */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .div-wrapper {
+        /* Determines color of div's text content */
         background-color: green;
-        width: 500px;
-        height: 500px;
+        width: 50%;
+        height: 50%;
+        margin: auto;
+
+        /* Determines color of div's text content */
+        color: white;
+      }
+
+      .div-wrapper span {
+        background-color: red;
+      }
+
+      .button-wrapper {
+        margin: 10px;
+      }
+
+      #my-image {
+        width: 400px;
       }
     </style>
   </head>
   <body>
-    <h1 style="color: white;">This is an H1 Title</h1>
-    <div class="canvas-wrapper"></div>
+    <h1 style="color: white;">This is a really simple site!</h1>
+    <div id="mydiv" class="div-wrapper container">
+      <span id="simple-span">This is a simple div element</span>
+    </div>
+    <div class="button-wrapper container">
+      <button onClick="changeDiv()">
+        Toggle Div Color
+      </button>
+    </div>
+    <div class="image-wrapper container">
+      <img
+        id="my-image"
+        src="http://cdn.prowrestlingsheet.com/app/uploads/2018/03/04100657/Hogan-Andre.jpg"
+      />
+    </div>
   </body>
+
+  <script src="main.js"></script>
+
+  <script type="text/javascript">
+    window.addEventListener("load", changeDiv, false);
+  </script>
 </html>
